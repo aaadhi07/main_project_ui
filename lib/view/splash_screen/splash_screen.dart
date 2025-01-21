@@ -1,6 +1,6 @@
-// Splash Screen
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:main_project_ui/view/login_screen/login_screen.dart';
 import 'package:main_project_ui/view/main_screen/main_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => MainScreen(),
+            builder: (context) => LoginScreen(),
           ));
     });
   }

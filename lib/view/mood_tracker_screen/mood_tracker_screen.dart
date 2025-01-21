@@ -6,7 +6,7 @@ class MoodTrackerScreen extends StatefulWidget {
 }
 
 class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
-  String? _selectedMood; // Tracks the currently selected mood
+  String? _selectedMood; 
 
   final List<Map<String, dynamic>> _moods = [
     {'emoji': '😊', 'label': 'Happy', 'color': Colors.orange},
@@ -26,19 +26,10 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text(
-      //     'Mood Tracker',
-      //     style: TextStyle(fontSize: 24, color: Colors.white),
-      //   ),
-      //   centerTitle: true,
-      //   backgroundColor: Colors.teal,
-      //   elevation: 0,
-      // ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.teal.shade100, Colors.teal.shade300],
+            colors: [Colors.black,Colors.white],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -47,8 +38,6 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 20),
-
-            // Title
             Text(
               'How are you feeling today?',
               style: TextStyle(
@@ -58,8 +47,6 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
               ),
             ),
             const SizedBox(height: 20),
-
-            // Mood Selection Grid
             Expanded(
               child: GridView.builder(
                 padding: const EdgeInsets.all(16),
@@ -98,8 +85,6 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
                 },
               ),
             ),
-
-            // Display Selected Mood
             if (_selectedMood != null) ...[
               const SizedBox(height: 20),
               Text(
@@ -127,7 +112,7 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
                           ),
                         );
                         setState(() {
-                          _selectedMood = null; // Reset mood selection
+                          _selectedMood = null; 
                         });
                       },
                 style: ElevatedButton.styleFrom(
@@ -136,8 +121,8 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 16, horizontal: 40),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
                 ),
                 child: const Text(
                   'Log Mood',

@@ -7,7 +7,7 @@ class MeditationScreen extends StatefulWidget {
 }
 
 class _MeditationScreenState extends State<MeditationScreen> {
-  int _remainingTime = 300; // 5 minutes in seconds
+  int _remainingTime = 300; 
   Timer? _timer;
   bool _isMeditating = false;
 
@@ -45,7 +45,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
     _timer?.cancel();
     setState(() {
       _isMeditating = false;
-      _remainingTime = 300; // Reset timer
+      _remainingTime = 300; 
     });
   }
 
@@ -163,3 +163,5 @@ class _MeditationScreenState extends State<MeditationScreen> {
     super.dispose();
   }
 }
+
+

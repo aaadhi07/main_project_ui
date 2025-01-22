@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -88,7 +89,8 @@ class ProfileScreen extends StatelessWidget {
             fontWeight: isLogout ? FontWeight.bold : FontWeight.normal,
           ),
         ),
-        onTap: () {
+        onTap: () async {
+          
           if (isLogout) {
             _showLogoutDialog(context);
           }
@@ -112,8 +114,9 @@ class ProfileScreen extends StatelessWidget {
               child: const Text('Cancel'),
             ),
             TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
+              onPressed: () async {
+                // Navigator.of(context).pop();
+                await FirebaseAuth.instance.signOut();
               },
               child: const Text('Log Out'),
             ),

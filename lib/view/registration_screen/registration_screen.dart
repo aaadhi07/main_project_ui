@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:main_project_ui/conroler/registration_screen_controler.dart';
 import 'package:main_project_ui/view/login_screen/login_screen.dart';
+import 'package:provider/provider.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override
@@ -16,12 +18,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   // Function to handle registration action
   void _register() {
     if (_formKey.currentState!.validate()) {
-      String email = _emailController.text.trim();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Registration Successful for $email'),
-          backgroundColor: Colors.teal,
-        ),
+      context.read<RegistrationScreenControler>().onRegister(
+        context: context,
+        email : _emailController.text,
+        password: _passwordController.text,
       );
     }
   }

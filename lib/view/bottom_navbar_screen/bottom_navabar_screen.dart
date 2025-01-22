@@ -4,12 +4,12 @@ import 'package:main_project_ui/view/meditation_screen/meditation_screen.dart';
 import 'package:main_project_ui/view/mood_tracker_screen/mood_tracker_screen.dart';
 import 'package:main_project_ui/view/profile_screen/profile_screen.dart';
 
-class MainScreen extends StatefulWidget {
+class BottomNavbarScreen extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _BottomNavbarScreenState createState() => _BottomNavbarScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [

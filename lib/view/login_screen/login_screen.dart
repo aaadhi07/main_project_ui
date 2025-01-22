@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:main_project_ui/conroler/login_screen_controller.dart';
 import 'package:main_project_ui/view/registration_screen/registration_screen.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -14,11 +16,11 @@ class _LoginScreenState extends State<LoginScreen> {
   // Function to handle login action
   void _login() {
     if (_formKey.currentState!.validate()) {
-      String email = _emailController.text.trim();
-      String password = _passwordController.text.trim();
+      context.read<LoginScreenController>().onLogin(
+          email: _emailController.text, password: _passwordController.text, context: context);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Welcome, $email'),
+          content: Text('Welcome, '),
           backgroundColor: Colors.teal,
         ),
       );
@@ -144,8 +146,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   // Optional Signup Link
                   TextButton(
                     onPressed: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => RegistrationScreen(),));
-                                        },
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RegistrationScreen(),
+                          ));
+                    },
                     child: Text(
                       'Don\'t have an account? Sign up',
                       style: TextStyle(
@@ -162,4 +168,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-

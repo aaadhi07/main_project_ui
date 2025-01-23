@@ -24,17 +24,25 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Color(0xFF006D77),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // App Logo
-            Icon(
-              Icons.self_improvement,
-              size: 100,
-              color: Colors.white,
-            ),
+            // Icon(
+            //   Icons.self_improvement,
+            //   size: 100,
+            //   color: Colors.white,
+            // ),
+            CircleAvatar(radius:52,
+            backgroundColor: Colors.black,
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    "https://cdn.pixabay.com/photo/2024/04/19/22/25/man-8707406_1280.png",
+                  ),
+                  radius: 50,
+                )),
             SizedBox(height: 20),
             // App Name
             Text(

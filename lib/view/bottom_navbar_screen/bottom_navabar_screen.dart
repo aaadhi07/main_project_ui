@@ -50,7 +50,7 @@ class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.teal,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
       ),

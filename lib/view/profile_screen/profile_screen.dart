@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:main_project_ui/view/login_screen/login_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -8,7 +9,7 @@ class ProfileScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.grey,Colors.blueGrey],
+            colors: [Colors.grey, Colors.blueGrey],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -90,7 +91,6 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         onTap: () async {
-          
           if (isLogout) {
             _showLogoutDialog(context);
           }
@@ -109,14 +109,21 @@ class ProfileScreen extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); 
+                Navigator.of(context).pop();
               },
               child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () async {
                 // Navigator.of(context).pop();
-                await FirebaseAuth.instance.signOut();
+               await FirebaseAuth.instance.signOut();
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen(),
+                  ),
+                  (route) => false,
+                );
               },
               child: const Text('Log Out'),
             ),

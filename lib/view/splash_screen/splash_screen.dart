@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:main_project_ui/view/login_screen/login_screen.dart';
-import 'package:main_project_ui/view/bottom_navbar_screen/bottom_navabar_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -35,8 +34,9 @@ class _SplashScreenState extends State<SplashScreen> {
             //   size: 100,
             //   color: Colors.white,
             // ),
-            CircleAvatar(radius:52,
-            backgroundColor: Colors.black,
+            CircleAvatar(
+                radius: 52,
+                backgroundColor: Colors.black,
                 child: CircleAvatar(
                   backgroundImage: NetworkImage(
                     "https://cdn.pixabay.com/photo/2024/04/19/22/25/man-8707406_1280.png",

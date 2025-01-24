@@ -10,15 +10,15 @@ class _HomePageState extends State<HomePage> {
   final List<Map<String, String>> quotes = [
     {
       'text': 'Stay positive, work hard, and make it happen!',
-      'image': 'asset/images/7ae2dbacc30d290f34f71d51b1fbf623.jpg',
+      'image': 'https://i.pinimg.com/originals/13/c0/cd/13c0cd7734a6add2a533d71efafe12e5.png',
     },
     {
-      'text': 'Take a deep breath, you are doing great.',
-      'image': 'asset/images/April-26-Quote.jpg',
+      'text': 'The Power of Self-Care.',
+      'image': 'https://cdn.shopify.com/s/files/1/0558/2782/4687/t/3/assets/img_2118-1696509578372_1400x.jpg?v=1696509579',
     },
     {
-      'text': 'Remember, self-care is not selfish!',
-      'image': 'asset/images/July-31-Quote.jpg',
+      'text': 'Calm is super power.',
+      'image': 'https://media.istockphoto.com/id/1354599849/vector/positive-message-on-a-light-green-abstract-illustration-background-calm-is-a-super-power.jpg?s=1024x1024&w=is&k=20&c=4yC6yWj0OCC3b-o_xM-v2uh_0Xx44Wy7nxWvyUMlttg=',
     },
   ];
   @override
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            child: Image.network("https://www.perfecto.io/sites/default/files/image/2021-05/image-blog-flutter-framework.jpg"),
+                            child: Image.network(quotes[index]["image"].toString()),
                             height: 200,
                             width: double.infinity,
                             // decoration: BoxDecoration(
